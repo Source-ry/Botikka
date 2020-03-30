@@ -12,12 +12,12 @@ client.on('message', msg => {
     if (split[0] === '!safkat') {
         func.getMenu()
         .then(data => {
-            msg.reply(data);
+            msg.reply("\n" + data);
         });
     } else if(split[0] === '!lukkari') {
         func.getSched(split[1])
         .then(data => {
-            msg.reply(data);
+            msg.reply("\n" + data);
         });
     }
 });
