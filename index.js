@@ -8,13 +8,14 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    if (msg.content === '!safkat') {
+    const split = msg.content.split(".");
+    if (split[0] === '!safkat') {
         func.getMenu()
         .then(data => {
             msg.reply(data);
         });
-    } else if(msg.content === '!lukkari') {
-        func.getSched("19tietob")
+    } else if(split[0] === '!lukkari') {
+        func.getSched(split[1])
         .then(data => {
             msg.reply(data);
         });
